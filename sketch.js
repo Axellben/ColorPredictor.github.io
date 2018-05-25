@@ -59,19 +59,24 @@ function draw() {
   text("white", width - width / 4, 200);
 
   fill(255);
+  textSize(15);
+  textAlign(CENTER, CENTER);
   if (which === "black") {
     // ellipse(width / 4, height / 4, 60, 60);
     image(img, width / 4 - 50, height / 2 + 100, img.width / 8, img.height / 8);
+    text("I think is this, black!!!", width / 4, height / 2 + 175);
   } else {
     // ellipse(width - width / 4, height / 4, 60, 60);
     image(img, width - width / 4 - 25, height / 4 + 200, img.width / 8, img.height / 8);
+    text("I think is this, white!!!", width - width / 4, height / 4 + 275);
   }
 }
 
 function colorPredictor(r, g, b) {
   let inputs = [r / 255, g / 2555, b / 255];
   let outputs = brain.predict(inputs);
-
+  console.log(outputs[0]);
+  console.log(outputs[1]);
   if (outputs[0] > outputs[1]) {
     return "black";
   } else {
