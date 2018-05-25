@@ -1,7 +1,7 @@
 let r, g, b;
 let brain;
 
-let which = "black";
+let which = "BLACK";
 
 function pickColor() {
   r = random(255);
@@ -40,7 +40,7 @@ function draw() {
 
   textSize(25);
   fill(255);
-  text("Does White or Black look better over this color?", 300, 50);
+  text("Does White or BLACK look better over this color?", 300, 50);
 
   textSize(55);
   noStroke();
@@ -53,22 +53,22 @@ function draw() {
 
   textAlign(CENTER, CENTER);
   fill(0);
-  text("black", width / 4, 200);
+  text("BLACK", width / 4, 200);
   fill(255);
 
-  text("white", width - width / 4, 200);
+  text("WHITE", width - width / 4, 200);
 
   fill(255);
   textSize(15);
   textAlign(CENTER, CENTER);
-  if (which === "black") {
+  if (which === "BLACK") {
     // ellipse(width / 4, height / 4, 60, 60);
     image(img, width / 4 - 50, height / 2 + 100, img.width / 8, img.height / 8);
-    text("I think is this, black!!!", width / 4, height / 2 + 175);
+    text("I think is , BLACK!!!", width / 4, height / 2 + 175);
   } else {
     // ellipse(width - width / 4, height / 4, 60, 60);
     image(img, width - width / 4 - 25, height / 4 + 200, img.width / 8, img.height / 8);
-    text("I think is this, white!!!", width - width / 4, height / 4 + 275);
+    text("I think is , WHITE!!!", width - width / 4, height / 4 + 275);
   }
 }
 
@@ -78,9 +78,9 @@ function colorPredictor(r, g, b) {
   console.log(outputs[0]);
   console.log(outputs[1]);
   if (outputs[0] > outputs[1]) {
-    return "black";
+    return "BLACK";
   } else {
-    return "white";
+    return "WHITE";
   }
 
   // if (r + g + b > 300) {
